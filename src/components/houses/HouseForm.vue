@@ -84,6 +84,7 @@
         min="0"
         required
       />
+      <!-- -->
     </div>
     <div class="form-control">
       <label for="vagas">Vagas</label>
