@@ -1,10 +1,10 @@
 <template>
   <section>
     <base-card>
-      <h2>Page not found</h2>
+      <h2>Pagina não encontrada</h2>
       <p>
-        This page could not be found - maybe check out all our
-        <router-link to="/coaches">coaches</router-link>.
+        Essa pagina não foi encontrada - talvez confira as 
+        <router-link to="/houses">casas</router-link>.
       </p>
     </base-card>
   </section>

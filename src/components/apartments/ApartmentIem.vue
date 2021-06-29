@@ -3,7 +3,7 @@
     <h3>{{ endereco }} - {{ andar }}° andar</h3>
     <h4>Aluguel: ${{ aluguel }}</h4>
     <div class="actions">
-      <base-button mode="outline" link :to="coachContactLink">Contact</base-button>
+      <base-button mode="outline" link :to="apartmentVisitLink">Visita</base-button>
       <base-button link :to="apartmentDetailsLink">Ver Detalhes</base-button>
     </div>
   </li>
@@ -14,8 +14,8 @@ export default {
   props: ['id', 'aluguel', 'area', 'armario', 'descricao', 'endereco',
    'quartos', 'jantar', 'estar', 'andar', 'portaria', 'vagas', 'bairro'],
   computed: {
-    coachContactLink() {
-      return this.$route.path + '/' + this.id + '/contact'; // /coaches/id/contact
+    apartmentVisitLink() {
+      return this.$route.path + '/' + this.id + '/visit'; // /coaches/id/visit
     },
     apartmentDetailsLink() {
       return this.$route.path + '/' + this.id; // /apartment/id

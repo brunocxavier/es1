@@ -45,12 +45,7 @@ export default {
   data() {
     return {
       isLoading: false,
-      error: null,
-      activeFilters: {
-        frontend: true,
-        backend: true,
-        career: true,
-      },
+      error: null
     };
   },
   computed: {
@@ -84,6 +79,12 @@ export default {
       this.error = null;
     },
   },
+  watch: {
+    'this.$router.path'() {
+      console.log('aqui')
+      this.loadApartments(true);
+    }
+  }
 };
 </script>
 

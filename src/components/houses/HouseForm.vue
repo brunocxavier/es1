@@ -25,6 +25,7 @@
         v-model.trim="aluguel"
         min="0"
         required
+        step="0.01"
       />
     </div>
     <div class="form-control">
@@ -43,7 +44,6 @@
         type="checkbox"
         id="armario"
         v-model="armario"
-        required
       />
     </div>
     <div class="form-control">

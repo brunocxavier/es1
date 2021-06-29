@@ -27,7 +27,7 @@
             :bairro="house.bairro"
           ></house-item>
         </ul>
-        <h3 v-else>No houses found.</h3>
+        <h3 v-else>Nenhuma casa encontrada.</h3>
       </base-card>
   </div>
 </template>
@@ -51,9 +51,6 @@ export default {
     };
   },
   computed: {
-    isCoach() {
-      return this.$store.getters['coaches/isCoach'];
-    },
     filteredHouses() {
       const coaches = this.$store.getters['houses/houses'];
       return coaches;

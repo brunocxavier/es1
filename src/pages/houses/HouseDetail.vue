@@ -21,7 +21,7 @@
       <base-card>
         <header>
           <h2>Interesado? Marque uma visita!</h2>
-          <base-button link :to="contactLink">Contact</base-button>
+          <base-button link :to="contactLink">Marque sua visita </base-button>
         </header>
         <router-view></router-view>
       </base-card>
@@ -38,14 +38,8 @@ export default {
     };
   },
   computed: {
-    fullName() {
-      return this.selectedCoach.firstName + ' ' + this.selectedCoach.lastName;
-    },
-    description() {
-      return this.selectedCoach.description;
-    },
     contactLink() {
-      return this.$route.path + '/' + this.id + '/contact';
+      return this.$route.path + '/visitHouse';
     },
   },
   created() {

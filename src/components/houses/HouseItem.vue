@@ -6,7 +6,7 @@
       <base-badge v-for="area in areas" :key="area" :type="area" :title="area"></base-badge>
     </div>
     <div class="actions">
-      <base-button mode="outline" link :to="coachContactLink">Contact</base-button>
+      <base-button mode="outline" link :to="houseVisitLink">Visita</base-button>
       <base-button link :to="houseDetailsLink">Ver Detalhes</base-button>
     </div>
   </li>
@@ -17,8 +17,8 @@ export default {
   props: ['id', 'aluguel', 'area', 'armario', 'descricao', 'endereco',
    'quartos', 'salas', 'vagas', 'bairro'],
   computed: {
-    coachContactLink() {
-      return this.$route.path + '/' + this.id + '/contact'; // /coaches/id/contact
+    houseVisitLink() {
+      return this.$route.path + '/' + this.id + '/visitHouse'; // /coaches/id/contact
     },
     houseDetailsLink() {
       return this.$route.path + '/' + this.id; // /houses/id

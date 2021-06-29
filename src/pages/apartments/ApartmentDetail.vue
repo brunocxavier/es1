@@ -11,7 +11,7 @@
         <h3>Bairro: {{ selectedApartment.bairro }} </h3>
         <h3>Area: {{ selectedApartment.area }} metros quadrados</h3>
         <h3 v-if="selectedApartment.armario"> Possui armario embutido</h3>
-        <h3>Descricao {{ selectedApartment.descricao }}</h3>
+        <h3>Descricao: {{ selectedApartment.descricao }}</h3>
         <h3>Quartos: {{ selectedApartment.quartos }}</h3>
         <h3>Salas de Jantar: {{ selectedApartment.jantar }}</h3>
         <h3>Salas de Estar: {{ selectedApartment.estar }}</h3>
@@ -23,7 +23,7 @@
       <base-card>
         <header>
           <h2>Interesado? Marque uma visita!</h2>
-          <base-button link :to="contactLink">Contact</base-button>
+          <base-button link :to="contactLink">Marque sua visita</base-button>
         </header>
         <router-view></router-view>
       </base-card>
@@ -36,12 +36,13 @@ export default {
   props: ['id'],
   data() {
     return {
+      visit: true,
       selectedApartment: null,
     };
   },
   computed: {
     contactLink() {
-      return this.$route.path + '/' + this.id + '/contact';
+      return this.$route.path + '/visit';
     },
   },
   created() {

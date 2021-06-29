@@ -24,6 +24,7 @@
         id="aluguel"
         v-model.trim="aluguel"
         min="0"
+        step="0.01"
         required
       />
     </div>

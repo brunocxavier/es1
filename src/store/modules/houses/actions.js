@@ -11,7 +11,8 @@ export default {
       salas: data.salas,
       suites:  data.suites,
       vagas:  data.vagas,
-      bairro: data.bairro
+      bairro: data.bairro,
+      horarios: []
     };
 
     const response = await fetch(
@@ -61,12 +62,43 @@ export default {
         salas: responseData[key].salas,
         suites:  responseData[key].suites,
         vagas:  responseData[key].vagas,
-        bairro: responseData[key].bairro
+        bairro: responseData[key].bairro,
+        horarios: responseData[key].horarios
       };
       houses.push(house);
     }
 
     context.commit('setHouses', houses);
     context.commit('setFetchTimestamp');
+  },
+  async setVisitHouse(_, data) {
+    const houseData = {
+      id: data.id,
+      aluguel: data.aluguel,
+      area: data.area,
+      armario: data.armario,
+      descricao: data.descricao,
+      endereco: data.endereco,
+      quartos: data.quartos,
+      salas: data.salas,
+      suites:  data.suites,
+      vagas:  data.vagas,
+      bairro: data.bairro,
+      horarios: data.horarios
+    };
+
+    const response = await fetch(
+      `https://es-residencias-default-rtdb.firebaseio.com/houses/${houseData.id}.json`,
+      {
+        method: 'PUT',
+        body: JSON.stringify(houseData)
+      }
+    );
+
+    // const responseData = await response.json();
+
+    if (!response.ok) {
+      // error ...
+    }
   }
 };
