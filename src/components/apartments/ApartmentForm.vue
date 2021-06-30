@@ -30,6 +30,17 @@
       />
     </div>
     <div class="form-control">
+      <label for="condominio">Condomínio</label>
+      <input
+        type="Number"
+        id="condominio"
+        v-model.trim="condominio"
+        min="0"
+        step="0.01"
+        required
+      />
+    </div>
+    <div class="form-control">
       <label for="area">Área</label>
       <input
         type="Number"
@@ -135,6 +146,7 @@ export default {
     return {
       endereco: '',
       aluguel: Number,
+      condominio: Number,
       area: Number,
       armario: Boolean,
       portaria: Boolean,
@@ -159,6 +171,7 @@ export default {
       const formData = {
         endereco: this.endereco,
         aluguel: this.aluguel,
+        condominio: this.condominio,
         area: this.area,
         armario: this.armario,
         portaria: this.portaria,

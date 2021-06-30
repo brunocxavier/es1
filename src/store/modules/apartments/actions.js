@@ -3,6 +3,7 @@ export default {
     const apartmentData = {
       id: new Date().getTime(),
       aluguel: data.aluguel,
+      condominio: data.condominio,
       area: data.area,
       armario: data.armario,
       descricao: data.descricao,
@@ -57,6 +58,7 @@ export default {
       const apartment = {
         id: key,
         aluguel: responseData[key].aluguel,
+        condominio: responseData[key].condominio,
         area: responseData[key].area,
         armario: responseData[key].armario,
         descricao: responseData[key].descricao,
@@ -81,6 +83,7 @@ export default {
     const apartmentData = {
       id: data.id,
       aluguel: data.aluguel,
+      condominio: data.condominio,
       area: data.area,
       armario: data.armario,
       descricao: data.descricao,

@@ -4,6 +4,7 @@
       <base-card>
         <h2>Endereco: {{ selectedApartment.endereco }} - Andar: {{ selectedApartment.andar }}</h2>
         <h3>Aluguel: R${{ selectedApartment.aluguel }}</h3>
+        <h3>Condomínio: R${{ selectedApartment.condominio }}</h3>
       </base-card>
     </section>
     <section>
