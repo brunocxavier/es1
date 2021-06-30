@@ -3,9 +3,10 @@
     <div class="form-control">
       <label for="bairro">Bairro</label>
       <select v-model="bairro" required>
-        <option>Buritis</option>
-        <option>Havai</option>
-        <option>Palmeiras</option>
+        <option 
+        v-for="item in filteredBairros"
+        :key="item.id" 
+        > {{ item.nome }} </option>
       </select>
     </div>
     <div class="form-control">
@@ -117,6 +118,12 @@ export default {
       bairro: ''
     };
   },
+  computed: {
+    filteredBairros() {
+      const bairros = this.$store.getters['bairros/bairros'];
+      return bairros;
+    }
+  },
   methods: {
     submitForm() {
       const formData = {
@@ -133,7 +140,19 @@ export default {
       };
       this.$emit('save-data', formData);
     },
-  },
+    async loadBairros() {
+      try {
+        await this.$store.dispatch('bairros/getBairros', {
+          forceRefresh: true,
+        });
+      } catch (error) {
+        this.error = error.message || 'Something went wrong!';
+      }
+    }
+  }, 
+  created() {
+    this.loadBairros()
+  }
 };
 </script>
 

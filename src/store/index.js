@@ -1,12 +1,14 @@
 import { createStore } from 'vuex';
 
 import housesModule from './modules/houses/index.js';
-import apartmentsModule from './modules/apartments/index.js'
+import apartmentsModule from './modules/apartments/index.js';
+import bairrosModule from './modules/bairros/index.js'
 
 const store = createStore({
   modules: {
     houses: housesModule,
-    apartments: apartmentsModule
+    apartments: apartmentsModule,
+    bairros: bairrosModule
   },
   state() {
     return {
