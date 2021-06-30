@@ -10,7 +10,7 @@
       </select>
     </div>
     <div class="form-control">
-      <label for="endereco">Endereco</label>
+      <label for="endereco">Endereço</label>
       <input
         type="text"
         id="endereco"
@@ -30,7 +30,7 @@
       />
     </div>
     <div class="form-control">
-      <label for="area">Area</label>
+      <label for="area">Área</label>
       <input
         type="Number"
         id="area"
