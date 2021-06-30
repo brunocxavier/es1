@@ -61,7 +61,7 @@ export default {
     },
   },
   created() {
-    this.loadApartments();
+    this.loadApartments(true);
   },
   methods: {
     async loadApartments(refresh = false) {

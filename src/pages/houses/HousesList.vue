@@ -60,7 +60,7 @@ export default {
     },
   },
   created() {
-    this.loadHouses();
+    this.loadHouses(true);
   },
   methods: {
     async loadHouses(refresh = false) {
