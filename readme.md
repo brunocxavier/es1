@@ -1,3 +1,5 @@
 # es1
-Trabalho Pratico 1 Engenharia de Software
-É necessário rodar 'npm run serve' para utilizar o WebApp para isso é necessario ter o node.js instalado
+# Trabalho Pratico 1 Engenharia de Software
+Autores: Bruno Caarvalho Xavier, Rebeca Larissa Silva Gaia, Matheus Guilherme Vilaça de Melo
+
+Run npm run serve to bring up the development server, view the app at localhost:8080(or whichever port is shown in your terminal)
