@@ -9,9 +9,9 @@
     <section>
       <base-card>
         <h3>Bairro: {{ selectedHouse.bairro }} </h3>
-        <h3>Area: {{ selectedHouse.area }} metros quadrados</h3>
+        <h3>Área: {{ selectedHouse.area }} metros quadrados</h3>
         <h3 v-if="selectedHouse.armario"> Possui armario embutido</h3>
-        <h3>Descricao {{ selectedHouse.descricao }}</h3>
+        <h3>Descrição {{ selectedHouse.descricao }}</h3>
         <h3>Quartos: {{ selectedHouse.quartos }}</h3>
         <h3>Salas: {{ selectedHouse.salas }}</h3>
         <h3>Vagas: {{ selectedHouse.vagas }}</h3>
