@@ -2,7 +2,7 @@
   <form @submit.prevent="submitForm">
     <div class="form-control">
       <label for="bairro">Bairro</label>
-      <select v-model="bairro">
+      <select v-model="bairro" required>
         <option>Buritis</option>
         <option>Havai</option>
         <option>Palmeiras</option>
@@ -44,7 +44,6 @@
         type="checkbox"
         id="armario"
         v-model="armario"
-        required
       />
     </div>
     <div class="form-control">
@@ -53,7 +52,6 @@
         type="checkbox"
         id="portaria"
         v-model="portaria"
-        required
       />
     </div>
     <div class="form-control">

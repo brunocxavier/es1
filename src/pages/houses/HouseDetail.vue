@@ -39,6 +39,9 @@ export default {
   },
   computed: {
     contactLink() {
+      if(this.$route.path.includes('/visit')){
+        return this.$route.path
+      }
       return this.$route.path + '/visitHouse';
     },
   },

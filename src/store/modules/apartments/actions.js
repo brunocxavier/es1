@@ -103,11 +103,28 @@ export default {
         body: JSON.stringify(apartmentData)
       }
     );
-
-    // const responseData = await response.json();
+    
+    context.commit('registerVisit', {
+      ...apartmentData,
+    });
 
     if (!response.ok) {
       // error ...
     }
+  },
+  async deleteApartment(context, data) {
+    const response = await fetch(
+      `https://es-residencias-default-rtdb.firebaseio.com/apartment/${data.id}.json`,
+      {
+        method: 'DELETE',
+        body: JSON.stringify(data)
+      }
+    );
+
+    if (!response.ok) {
+      // error ...
+    }
+
+    context.commit('deleteApartment', data)
   }
 };

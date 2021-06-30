@@ -8,6 +8,7 @@
     <div class="actions">
       <base-button mode="outline" link :to="houseVisitLink">Visita</base-button>
       <base-button link :to="houseDetailsLink">Ver Detalhes</base-button>
+      <base-button class="delete" @click="del()">Excluir</base-button>
     </div>
   </li>
 </template>
@@ -24,6 +25,11 @@ export default {
       return this.$route.path + '/' + this.id; // /houses/id
     },
   },
+  methods: {
+    async del() {
+      this.$store.dispatch('houses/deleteHouse', {id: this.id})
+    }
+  }
 };
 </script>
 

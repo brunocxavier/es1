@@ -5,6 +5,7 @@
     <div class="actions">
       <base-button mode="outline" link :to="apartmentVisitLink">Visita</base-button>
       <base-button link :to="apartmentDetailsLink">Ver Detalhes</base-button>
+      <base-button class="delete" @click="del()">Excluir</base-button>
     </div>
   </li>
 </template>
@@ -21,6 +22,11 @@ export default {
       return this.$route.path + '/' + this.id; // /apartment/id
     },
   },
+  methods: {
+    async del() {
+      this.$store.dispatch('apartments/deleteApartment', {id: this.id})
+    }
+  }
 };
 </script>
 

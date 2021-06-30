@@ -77,12 +77,6 @@ export default {
     },
     handleError() {
       this.error = null;
-    },
-  },
-  watch: {
-    'this.$router.path'() {
-      console.log('aqui')
-      this.loadApartments(true);
     }
   }
 };

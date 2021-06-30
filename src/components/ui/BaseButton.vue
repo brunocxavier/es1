@@ -65,11 +65,13 @@ button:active {
 }
 
 .delete {
-   background-color: transparent;
+  background-color: transparent;
   color: red;
   border-color: red;
 }
 
+.delete:hover,
+.delete:active, 
 .flat:hover,
 .flat:active,
 .outline:hover,

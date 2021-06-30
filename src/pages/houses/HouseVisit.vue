@@ -5,7 +5,7 @@
   <form @submit.prevent="submitForm">
     <div class="form-control">
       <label for="data">Selecione o Dia</label>
-      <input type="date" id="data" v-model="data"/>
+      <input type="date" id="data" v-model="data" :min="today"/>
     </div>
     <div class="form-control">
       <label for="hora">Selecione a Hora</label>
@@ -35,6 +35,18 @@ export default {
       disponiveis() {
         return ['8:00', '9:00', '10:00', '11:00', '12:00', '13:00', '14:00',
          '15:00', '16:00', '17:00'].filter((item) => !this.horariosOcupados.includes(item))
+      },
+      today() {
+        var date = new Date() 
+        var mm = date.getMonth() + 1
+        var dd =  date.getDate()
+        if(dd<10){
+          dd='0'+dd
+        } 
+        if(mm<10){
+          mm='0'+mm
+        } 
+        return date.getFullYear() + '-' + mm + '-' + date.getDate()
       }
   },
   methods: {

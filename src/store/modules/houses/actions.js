@@ -71,7 +71,7 @@ export default {
     context.commit('setHouses', houses);
     context.commit('setFetchTimestamp');
   },
-  async setVisitHouse(_, data) {
+  async setVisitHouse(context, data) {
     const houseData = {
       id: data.id,
       aluguel: data.aluguel,
@@ -95,10 +95,28 @@ export default {
       }
     );
 
-    // const responseData = await response.json();
+    context.commit('registerVisit', {
+      ...houseData,
+    });
+
 
     if (!response.ok) {
       // error ...
     }
+  },
+  async deleteHouse(context, data) {
+    const response = await fetch(
+      `https://es-residencias-default-rtdb.firebaseio.com/houses/${data.id}.json`,
+      {
+        method: 'DELETE',
+        body: JSON.stringify(data)
+      }
+    );
+
+    if (!response.ok) {
+      // error ...
+    }
+
+    context.commit('deleteHouse', data)
   }
 };

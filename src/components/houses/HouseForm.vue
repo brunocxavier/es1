@@ -2,7 +2,7 @@
   <form @submit.prevent="submitForm">
     <div class="form-control">
       <label for="bairro">Bairro</label>
-      <select v-model="bairro">
+      <select v-model="bairro" required>
         <option>Buritis</option>
         <option>Havai</option>
         <option>Palmeiras</option>
